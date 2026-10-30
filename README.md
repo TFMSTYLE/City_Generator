@@ -3,7 +3,7 @@
 ![city-thumb](https://github.com/user-attachments/assets/039e67a3-59b1-48df-95a3-4c48bbf22de6)
 
 **Author:** The French Monkey (TFMSTYLE)  
-**Version:** 1.0.0  
+**Version:** 1.0.1  
 
 ---
 
@@ -143,3 +143,21 @@ Does not affect the live update state or custom building collection link.
 - Height variation and center falloff together control the overall skyline profile.  
 - Custom buildings collections can contain multiple meshes; each will be randomly distributed.  
 - For best performance with large layouts, disable **Live Update** while adjusting parameters.
+
+---
+
+## Install
+
+Needs Blender 4.2 or later. Get the zip from [tfmstyle.com](https://tfmstyle.com), then in Blender open Edit > Preferences > Get Extensions, open the menu at the top right and pick Install from Disk.
+
+To build the zip yourself, run this in the repo folder:
+
+```bash
+blender --command extension build
+```
+
+---
+
+## License
+
+GPL 3.0 or later. See [LICENSE](LICENSE).
