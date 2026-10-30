@@ -4,7 +4,7 @@
 bl_info = {
     "name": "City",
     "author": "The French Monkey",
-    "version": (1, 0, 2),
+    "version": (1, 0, 3),
     "blender": (4, 2, 0),
     "location": "View3D > Sidebar > City",
     "description": "Generate procedural city blocks",
@@ -504,7 +504,6 @@ def delete_city():
                 break
 
     if not master:
-        print("❌ No City_Master found to delete.")
         return
 
     for child in list(master.children):
@@ -529,8 +528,6 @@ def delete_city():
         for obj in list(coll.objects):
             bpy.data.objects.remove(obj, do_unlink=True)
         bpy.data.collections.remove(coll)
-
-    print("🗑️ City deleted successfully.")
 
 def rebuild_city(context):
     p = context.scene.citygen_props
@@ -634,7 +631,6 @@ def update_city(self, context):
 
     master = get_selected_city_master(context)
     if not master:
-        print("⚠️ Live update skipped: no City_Master selected.")
         return
 
     rebuild_city(context)

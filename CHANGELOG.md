@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3
+
+- Removed the messages it printed to Blender's system console in normal use
+
 ## 1.0.2
 
 - Added update checks: when a new version is published on Relay, an Update button appears in this panel. Nothing goes online when Allow Online Access is off, and Blender store installs keep updating through the store
