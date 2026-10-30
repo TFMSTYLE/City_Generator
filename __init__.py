@@ -4,7 +4,7 @@
 bl_info = {
     "name": "City",
     "author": "The French Monkey",
-    "version": (1, 0, 1),
+    "version": (1, 0, 2),
     "blender": (4, 2, 0),
     "location": "View3D > Sidebar > City",
     "description": "Generate procedural city blocks",
@@ -18,6 +18,11 @@ import random
 import hashlib
 from mathutils import Matrix, Vector
 from math import sqrt, pi, sin, cos
+
+try:
+    from . import relay_updater
+except ImportError:  # the Addon Collection has its own updates
+    relay_updater = None
 
 MASTER_NAME = "City_Master"
 INSTANCE_COLLECTION_NAME = "City_Buildings_Collection"
@@ -729,6 +734,8 @@ class VIEW3D_PT_city_generator(bpy.types.Panel):
     bl_category = "City"
 
     def draw(self, context):
+        if relay_updater:
+            relay_updater.draw(self.layout)
         layout = self.layout
         p = context.scene.citygen_props
         master = get_selected_city_master(context)
@@ -793,11 +800,15 @@ classes = (
 )
 
 def register():
+    if relay_updater:
+        relay_updater.register("blender-city")
     for c in classes:
         bpy.utils.register_class(c)
     bpy.types.Scene.citygen_props = bpy.props.PointerProperty(type=CityGenProperties)
 
 def unregister():
+    if relay_updater:
+        relay_updater.unregister()
     for c in reversed(classes):
         bpy.utils.unregister_class(c)
     del bpy.types.Scene.citygen_props
