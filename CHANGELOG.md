@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.4
+
+- Generate now works from Edit Mode. It used to stop with an error and leave pieces behind
+
 ## 1.0.3
 
 - Removed the messages it printed to Blender's system console in normal use

@@ -4,7 +4,7 @@
 bl_info = {
     "name": "City",
     "author": "The French Monkey",
-    "version": (1, 0, 3),
+    "version": (1, 0, 4),
     "blender": (4, 2, 0),
     "location": "View3D > Sidebar > City",
     "description": "Generate procedural city blocks",
@@ -680,6 +680,8 @@ class CITYGEN_OT_generate(bpy.types.Operator):
     bl_description = "Generate or regenerate the city with current settings"
     
     def execute(self, context):
+        if context.mode != "OBJECT":
+            bpy.ops.object.mode_set(mode="OBJECT")
         generate_city(context)
         self.report({'INFO'}, "Generated city geometry")
         return {"FINISHED"}
