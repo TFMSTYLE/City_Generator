@@ -3,7 +3,7 @@
 ![city-thumb](https://github.com/user-attachments/assets/039e67a3-59b1-48df-95a3-4c48bbf22de6)
 
 **Author:** The French Monkey (TFMSTYLE)  
-**Version:** 1.0.4  
+**Version:** 1.0.5  
 
 ---
 

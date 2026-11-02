@@ -4,7 +4,7 @@
 bl_info = {
     "name": "City",
     "author": "The French Monkey",
-    "version": (1, 0, 4),
+    "version": (1, 0, 5),
     "blender": (4, 2, 0),
     "location": "View3D > Sidebar > City",
     "description": "Generate procedural city blocks",
